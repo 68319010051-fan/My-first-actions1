@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My First Web</title>
+    <style>
+        /* โค้ด CSS ส่วนนี้จะช่วยดึงปุ่มมาไว้ตรงกลางหน้าจอพอดี */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;  /* จัดกลางแนวนอน */
+            align-items: center;      /* จัดกลางแนวตั้ง */
+            min-height: 100vh;        /* ให้ความสูงเต็มหน้าจอ */
+            background-color: #f0f2f5; /* แถมสีพื้นหลังนวล ๆ ให้ครับ */
+            font-family: sans-serif;
+        }
+
+        /* ตกแต่งปุ่มให้ดูสวยและเด่นขึ้น */
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05); /* เวลาเอาเมาส์ชี้ ปุ่มจะขยายใหญ่นิดนึง */
+        }
+    </style>
 </head>
 <body>
-    <button id="myBtn">Click Me</button>
-    <script src="script.js"></script>
+
+    <button onclick="alert('ยินดีต้อนรับสู่เว็บไซต์ของฉัน!')">อาธาร ยีย๊บ 051</button>
+
 </body>
 </html>
