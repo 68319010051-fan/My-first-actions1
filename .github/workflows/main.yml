@@ -1,34 +1,24 @@
-name: Deploy Static Web to GitHub Pages
+name: deploy to github pages
 
 on:
   push:
     branches:
       - main
 
-# กำหนดสิทธิ์ให้ GitHub Actions สามารถเข้ามาแก้ไขและอัปโหลดไฟล์เว็บได้
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: deploy to github pages
+        uses: actions-gh-pages@v4
         with:
-          path: '.' # อัปโหลดไฟล์ทั้งหมดในโฟลเดอร์ปัจจุบัน
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
