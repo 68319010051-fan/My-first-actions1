@@ -9,5 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # เพิ่มบรรทัดนี้เพื่อดึงโค้ดจาก Repository ลงเครื่องจำลอง
+      - uses: actions/checkout@v4
+
       - name: Say hello
         run: echo 'Hello GitHub action'
